@@ -108,16 +108,17 @@ body{
     display: inline;
   }
 
-    .pagination li a{
+    .link{
       border: 1px solid #eaeaea;
       border-radius: 5px;
       padding: 3px 8px;
       text-decoration: none;
       color: #4ba6c3;
+      cursor: pointer;
     }
 
-    .pagination li a.active,
-    .pagination li a:hover{
+    .link:active,
+    .link:hover{
       background-color: #4ba6c3;
       color: #fff;
     }
