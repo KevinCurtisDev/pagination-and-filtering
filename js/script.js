@@ -11,15 +11,16 @@ const pageHeader = document.querySelector(".page-header");
 
 //Initial list of students
 const studentList = Array.from(document.querySelectorAll(".student-item"));
+
+//Dynamically changing list of students
 let activeStudentList = [];
 
-const studentSearchBox = document.querySelector('#student-search-box');
 const studentNames = document.querySelectorAll(".student-item .student-details h3");
 const studentsPerPage = 10;
 let activeCount = studentList.length;
 let paginationButtonNum = Math.ceil(activeCount / studentsPerPage);
 const searchBarContainer = document.createElement('div');
-let paginationLinks = document.createElement('div');
+const paginationLinks = document.createElement('div');
 paginationLinks.classList.add('pagination');
 
 
@@ -142,6 +143,10 @@ pageHeader.addEventListener('input', (e) => {
          activeStudentList[i].classList.add("student-item-hide");
       }
    }
+});
+
+document.getElementById('student-search').addEventListener('click', () => {
+   document.getElementById('student-search-box').value = "";
 });
 
 
