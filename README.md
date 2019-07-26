@@ -19,6 +19,16 @@ A search box allows users to filter the list of entries based on the name of eac
 * CSS3
 * vanilla JavaScript
 
+## Deployment
+
+The app is deployed to github pages and can be viewed at the above link.
+
+To run the project locally: 
+
+* Clone or download the repo.
+* From your terminal/command line, cd into the project folder;
+* If you have python3 installed, runn the following command: python3 -m http.server
+
 ## Sample code
 
 This function dynamically creates pagination buttons in the dom:
