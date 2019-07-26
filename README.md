@@ -19,6 +19,44 @@ A search box allows users to filter the list of entries based on the name of eac
 * CSS3
 * vanilla JavaScript
 
+## Sample code
+
+This function dynamically creates pagination buttons in the dom:
+
+```JavaScript
+
+/*************************** CREATE & ADD PAGE LINK BUTTONS ************************/
+const appendPageLinks = (num) => {
+
+   paginationLinks.innerHTML = "";
+
+   for (let i = 1; i <= num; i++){
+      let button = document.createElement('li');
+      button.setAttribute("class", "link");
+      button.innerHTML = i;
+      paginationLinks.appendChild(button);
+   }
+
+   paginationLinks.children[0].classList.add("active");
+   
+   let pageCount = paginationLinks.children.length;
+
+   page.appendChild(paginationLinks);
+   paginationLinks.addEventListener('click', (e) => {
+      for (let i = 0; i < pageCount; i++) {
+         paginationLinks.children[i].setAttribute('class', 'link');
+      }
+
+      e.target.setAttribute('class', 'active');
+      let num = Number(e.target.innerHTML + 0);
+      num -= studentsPerPage;
+
+      showPage(num);
+   });
+}
+
+```
+
 ## Resources
 
 The list of student elemnts and the css file were supplied by Treehouse.com.
